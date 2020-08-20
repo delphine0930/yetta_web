@@ -1,10 +1,7 @@
-FROM node:12.13.0 as builder
+FROM node
 WORKDIR /usr/src/app
-
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
 COPY package*.json ./
 RUN npm install --silent
-COPY . ./
+COPY . .
 CMD ["npm", "start"]
 
