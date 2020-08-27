@@ -78,8 +78,8 @@ class Main extends Component {
                         </a>
                     </td>
                     <td className="t_right">{(blog.subscriber/1000).toFixed(2)} k</td>
-                    <td className="t_right">{blog.totalContent}</td>
-                    <td className="t_right">{blog.monthlyAvgContent}</td>
+                    <td className="t_right">{blog.totalContent.toLocaleString()}</td>
+                    <td className="t_right">{blog.monthlyAvgContent.toLocaleString()}</td>
                     <td className="tag">
                         {tags}
                     </td>
