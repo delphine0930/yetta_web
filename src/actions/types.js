@@ -1,3 +1,3 @@
-export const FETCH_BLOG = "fetch blog";
+export const SAVE_SEARCH_STRING = "save serach string";
 
-export const SAVE_SEARCH_TAG = "save serach tag";
+export const FETCH_BLOG = "fetch blog";

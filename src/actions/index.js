@@ -1,12 +1,8 @@
-import { FETCH_BLOG, SAVE_SEARCH_TAG } from "./types.js"; 
+import { SAVE_SEARCH_STRING } from "./types.js"; 
 
-export function fetchBlog(blogs){
-    // response = axios.get('3.34.47.175:')
-}
-
-export function saveSerachTag(tag) {
+export function saveSearchString(string) {
     return {
-        type: SAVE_SEARCH_TAG,
-        payload: tag
+        type: SAVE_SEARCH_STRING,
+        payload: string
     }
 }

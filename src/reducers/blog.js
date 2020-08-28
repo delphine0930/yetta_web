@@ -1,10 +1,9 @@
-import { FETCH_BLOG } from "../actions/types";
+import { SAVE_SEARCH_STRING  } from "../actions/types";
 
-export default function(state = [], action) {
+export default function(state = "", action) {
     switch (action.type) {
-        case FETCH_BLOG:
-            return [...state, action.payload];
-     
+        case SAVE_SEARCH_STRING:
+            return action.payload;
         default:
             return state;
     }
