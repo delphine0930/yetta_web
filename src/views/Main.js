@@ -58,6 +58,10 @@ class Main extends Component {
                     blogs: res
                 })
             });
+
+        this.setState({
+            searchString: ""
+        })
     }
 
     // 엔터키로 검색
@@ -115,7 +119,7 @@ class Main extends Component {
                         <form className="search_form">
                             <input type="text" onKeyPress={(event) => { this.handleKeyPress(event) }}
                             onChange={(event) => {this.setState({searchString: event.target.value})}} 
-                            placeholder="검색" value={this.state.searchString}/>
+                            placeholder="태그 및 이름으로 검색" value={this.state.searchString}/>
                             <button type="button" onClick={(event) => this.search(event)}>검색</button>
                         </form>
                     </div>
