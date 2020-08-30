@@ -1,0 +1,42 @@
+#container {position: relative; padding: 140px 0 0 0; background-color: #f1f2f2;}
+#container > .inner {padding: 0 16px 25px;}
+.main_top {position: absolute; top: -140px; left: 0; right: 0; box-sizing: border-box; width: 100%; margin: 0 auto; padding: 0 16px;}
+.main_top .inner {position: relative; box-sizing: border-box; padding: 25px 36px 15px; background-color: #fff; border-radius: 15px;}
+.main_top .inner .txt_box strong {display: block; font-size: 31px; color: #414042;}
+.main_top .inner .txt_box p {margin: 10px 0 0 0; line-height: 1.4; font-size: 22px; font-weight: 500; color: #414042;}
+.main_top .inner button {display: block; margin: 15px auto 0; width: 200px; height: 47px; font-size: 27px; font-weight: 600; color: #fff; border-radius: 25px; background-color: #28acc1;}
+
+.table {width: 100%; border-bottom: 4px solid #d1d3d4;}
+.table thead tr {border-bottom: 3px solid #d1d3d4; background-color: #e2e3e4;}
+.table thead th {padding: 10px 5px; font-size: 21px; font-weight: 600; color: #414042; text-align: center; border-left: 1px solid #a7a9ac;}
+.table thead th:first-child {border: 0;}
+.table thead th.t_left {text-align: left;}
+.table tbody tr {height: 80px; background-color: #fff;}
+.table tbody tr:nth-child(2n) {background-color: #ebebec;}
+.table tbody td {padding: 10px; font-size: 19px; font-weight: 500; color: #414042; text-align: left; border-left: 1px solid #a7a9ac;}
+.table tbody td:first-child {border: 0;}
+.table tbody td.t_right {text-align: right;}
+.table .rank_num span {display: block; font-size: 19px; text-align: right;}
+.table .rank_num .c_rank {font-weight: 600; color: #414042;}
+.table .rank_num .rank {line-height: 15px; height: 15px; font-weight: 500; color: #414042;}
+.table .rank_num .rank i {display: inline-block; margin: 0 5px 0 0; width: 15px; height: 15px; background-repeat: no-repeat; background-position: 0 center; background-size: 15px 15px; vertical-align: top;}
+.table .rank_num .rank_up {color: #ff0000;}
+.table .rank_num .rank_up i {background-image: url(../images/main/ic_up.png);}
+.table .rank_num .rank_down {color: #0f3add;}
+.table .rank_num .rank_down i {background-image: url(../images/main/ic_down.png);}
+/* 임의 추가 */
+.table .rank_num .rank_stay {color: #414042;}
+
+.table .b_tit {display: block; overflow: hidden;}
+.table .b_tit .new {display: block; float: left; width: 17px; height: 17px; background: url(../images/main/ic_new.png) no-repeat 0 0 / 17px 17px; text-indent: -9999px; vertical-align: top;}
+.table .b_tit p {float: left; margin: -5px 0 0 5px; width: calc(100% - 22px); font-size: 19px; word-break: keep-all;}
+.table .tag {padding: 10px 5px;}
+.table .tag button {display: inline-block; height: 26px; line-height: 24px; padding: 0 5px; font-size: 14px; color: #231f20; vertical-align: top; border: 1px solid #d1d3d4; background-color: #f1f2f2; border-radius: 12px; text-align: center;}
+.table .tag button + button {margin: 0 2px 2px 0;}
+
+
+
+
+
+
+

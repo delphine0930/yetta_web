@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Route, Redirect, Switch } from "react-router-dom";
-import * as actions from '../actions';
 
 import mainRoutes from '../routes/index';
 
@@ -31,4 +29,4 @@ class MainLayout extends Component {
     }
 }
 
-export default connect(null, actions) (MainLayout);
+export default (MainLayout);

@@ -21,14 +21,14 @@
 .table .rank_num .rank {line-height: 24px; height: 24px; font-weight: 500; color: #414042;}
 .table .rank_num .rank i {display: inline-block; margin: 0 10px 0 0; width: 24px; height: 24px; background-repeat: no-repeat; background-position: 0 center; vertical-align: top;}
 .table .rank_num .rank_up {color: #ff0000;}
-.table .rank_num .rank_up i {background-image: url(/images/main/ic_up.png);}
+.table .rank_num .rank_up i {background-image: url(../images/main/ic_up.png);}
 .table .rank_num .rank_down {color: #0f3add;}
-.table .rank_num .rank_down i {background-image: url(/images/main/ic_down.png);}
+.table .rank_num .rank_down i {background-image: url(../images/main/ic_down.png);}
 /* 임의 추가 */
 .table .rank_num .rank_stay {color: #414042;}
 
 .table .b_tit {display: block; font-size: 24px;}
-.table .b_tit .new {display: inline-block; width: 24px; height: 40px; margin: 0 10px 0 0; background: url(/images/main/ic_new.png) no-repeat 0 center; text-indent: -9999px; vertical-align: top;}
+.table .b_tit .new {display: inline-block; width: 24px; height: 40px; margin: 0 10px 0 0; background: url(../images/main/ic_new.png) no-repeat 0 center; text-indent: -9999px; vertical-align: top;}
 .table .tag button {display: inline-block; margin: 0 10px 10px 0; height: 40px; line-height: 38px; padding: 0 15px; font-size: 18px; color: #231f20; vertical-align: top; border: 1px solid #d1d3d4; background-color: #f1f2f2; border-radius: 20px; text-align: center;}
 
 

@@ -1,26 +1,19 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
 
 import ReactTooltip from 'react-tooltip';
 
-class Main extends Component {
+class MobileMain extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            blogs: []
+            blogs: [],
+            searchString: ""
         };
     }
 
     componentDidMount() {
-        this.fetchBlog()
-            .then(res => {
-                this.setState({
-                    blogs: res
-                })
-            });
-        
+        this.search();
     }
 
     fetchBlog = () => {
@@ -29,13 +22,13 @@ class Main extends Component {
             'Content-Type': 'application/json'
         }
 
-        let url = 'api/blogs';
+        let url = '/api/blogs';
         
         // search tag 가 있으면 tag 넣어서 검색
-        if(this.props.searchString !== undefined && this.props.searchString !== "") {
-            url = `${url}/?search=${this.props.searchString}`;
+        if(this.state.searchString !== undefined && this.state.searchString !== "") {
+            url = `${url}/?search=${this.state.searchString}`;
         } 
-
+    
         return new Promise((resolve, reject) => {
             fetch(url, {
                 method: 'GET',
@@ -54,12 +47,7 @@ class Main extends Component {
 
     }
 
-    handleOnChange = (event) => {
-        this.props.saveSearchString(event.target.value);
-    }
-
     search = () => {
-        
         this.fetchBlog()
             .then(res => {
                 this.setState({
@@ -70,16 +58,16 @@ class Main extends Component {
 
     // 엔터키로 검색
     handleKeyPress = (event) => {
-        if (event.key === 'Enter' && this.props.searchString.length > 0) {
+        if (event.key === 'Enter' && this.state.searchString.length > 0) {
             event.preventDefault();
             this.search();
         }
     }
 
     render() {
-        var imgPrefix = "/images/";
         
         var rows = [];
+
         this.state.blogs.forEach((blog) => {
             var diffRanking = blog.yesterdayRanking - blog.ranking;
             var tags = [];
@@ -112,21 +100,19 @@ class Main extends Component {
             );
         });
 
-        const searchString = this.props.searchString;
-
         return(
             <div>
                 <div id="header">
                     <div className="inner">
                         <h1 className="logo">
                             <a href="index.html">
-                                <img src={imgPrefix + "common/logo.png"} alt="예따" />
+                                <img src={"/assets/web/images/common/logo.png"} alt="예따" />
                             </a>
                         </h1>
                         <form className="search_form">
-                            <input type="text" onKeyPress={this.handleKeyPress}
-                            onChange={(event) => { this.handleOnChange(event) }} 
-                            placeholder="검색" value={searchString}/>
+                            <input type="text" onKeyPress={(event) => { this.handleKeyPress(event) }}
+                            onChange={(event) => {this.setState({searchString: event.target.value})}} 
+                            placeholder="검색" value={this.state.searchString}/>
                             <button type="button" onClick={(event) => this.search(event)}>검색</button>
                         </form>
                     </div>
@@ -172,11 +158,4 @@ class Main extends Component {
     }
 }
 
-function mapStateProps(state) {
-    return {
-        searchString: state.searchString,
-
-    };
-}
-
-export default connect(mapStateProps, actions) (Main);
+export default (MobileMain);
