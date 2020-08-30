@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import ReactTooltip from 'react-tooltip';
+import Modal from 'react-modal';
+
+import Subscribe from './Subscribe.js';
 
 class Main extends Component {
 
@@ -8,7 +11,8 @@ class Main extends Component {
         super(props);
         this.state = {
             blogs: [],
-            searchString: ""
+            searchString: "",
+            showModal : false
         };
     }
 
@@ -117,13 +121,21 @@ class Main extends Component {
                     </div>
                 </div>
                 <div id="container">
+                    <Modal 
+                        isOpen = {this.state.showModal}
+                        onRequestClose={() => this.setState({ showModal:false })}
+                        style={{ content: { backgroundColor: "transparent", border: "0px", padding: "0px",
+                                    left: "10%", right: '10%', top: '10%', height: '53%' } }}>
+                        <Subscribe/>
+                    </Modal>
                     <div className="main_top">
                         <div className="inner">
                             <div className="txt_box">
                                 <strong>구독만 하면 매일 아침 배달되는 주식 정보</strong>
                                 <p>국내 주식 투자 블로그를 평가하여<br/>상위 20개 블로그의 새 글을<br/>매일 아침 이메일로 보내 드립니다.</p>
                             </div>
-                            <button type="button" onClick={() => this.props.history.push('/subscribe')}>구독하기</button>
+                            {/* <button type="button" onClick={() => this.props.history.push('/subscribe')}>구독하기</button> */}
+                            <button type="button" onClick={() => this.setState({showModal: true})}>구독하기</button>
                         </div>
                     </div>
                     <div className="inner">
