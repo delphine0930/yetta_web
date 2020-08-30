@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import ReactTooltip from 'react-tooltip';
 
-class MobileMain extends Component {
+class Main extends Component {
 
     constructor(props) {
         super(props);
@@ -64,8 +64,7 @@ class MobileMain extends Component {
         }
     }
 
-    render() {
-        
+    render() {      
         var rows = [];
 
         this.state.blogs.forEach((blog) => {
@@ -158,4 +157,4 @@ class MobileMain extends Component {
     }
 }
 
-export default (MobileMain);
+export default (Main);

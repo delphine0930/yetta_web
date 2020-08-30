@@ -1,23 +1,18 @@
-import WebMain from '../views/web/WebMain.js';
-import MobileMain from '../views/web/MobileMain.js';
-import Subscribe from '../views/web/Subscribe.js';
+import Main from '../views/Main.js';
+import Subscribe from '../views/Subscribe.js';
 
 const mainRoutes = [
     {
-        name: 'WebMain',
+        name: 'Main',
         path: '/',
-        component: WebMain,
+        component: Main,
     },
     {
         name: 'Subscribe',
         path: '/subscribe',
         component: Subscribe
     },
-    {
-        name: 'MobileMain',
-        path: '/m',
-        component: MobileMain,
-    },
+    
 ]
 
 export default mainRoutes;

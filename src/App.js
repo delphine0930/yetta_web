@@ -7,7 +7,6 @@ import MainLayout from './layouts/MainLayout.js';
 
 
 function App() {
-  console.log(window.location.host.split("."));
   return (
     <div>
       {window.location.host.split(".")[0] !== "m" ? 
