@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import ReactTooltip from 'react-tooltip';
 import Modal from 'react-modal';
+import LoadingOverlay from 'react-loading-overlay';
 
 import Subscribe from './Subscribe.js';
 
@@ -12,7 +13,8 @@ class Main extends Component {
         this.state = {
             blogs: [],
             searchString: "",
-            showModal : false
+            showModal: false,
+            loading: false
         };
     }
 
@@ -52,16 +54,22 @@ class Main extends Component {
     }
 
     search = () => {
+        this.setState({
+            loading: true
+        })
+
         this.fetchBlog()
             .then(res => {
                 this.setState({
                     blogs: res
                 })
+            })
+            .finally(() => {
+                this.setState({
+                    searchString: "",
+                    loading: false
+                })
             });
-
-        this.setState({
-            searchString: ""
-        })
     }
 
     // 엔터키로 검색
@@ -95,7 +103,7 @@ class Main extends Component {
                         <a className="b_tit" href={blog.url} target="_blank" rel="noopener noreferrer" data-tip={blog.comment}>
                             {blog.newContent ? <i className="new">New</i> : null }{blog.name}
                         </a>
-                        <ReactTooltip/>
+                        <ReactTooltip effect="solid"/>
                     </td>
                     <td className="t_right">{(blog.subscriber/1000).toFixed(2)} k</td>
                     <td className="t_right">{blog.totalContent.toLocaleString()}</td>
@@ -108,6 +116,7 @@ class Main extends Component {
         });
 
         return(
+        <LoadingOverlay active={this.state.loading}>
             <div>
                 <div id="header">
                     <div className="inner">
@@ -169,6 +178,7 @@ class Main extends Component {
                     </div>
                 </div>
             </div>
+        </LoadingOverlay >
         );
     }
 }
