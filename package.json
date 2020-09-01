@@ -37,6 +37,7 @@
     ],
     "development": [
       ">0.2%",
+      "ie 11",
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
