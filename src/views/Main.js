@@ -32,9 +32,9 @@ class Main extends Component {
         
         // search tag 가 있으면 tag 넣어서 검색
         if(this.state.searchString !== undefined && this.state.searchString !== "") {
-            url = `${url}/?search=${this.state.searchString}`;
+            url = `${url}/?search=${encodeURIComponent(this.state.searchString)}`;
         } 
-    
+        
         return new Promise((resolve, reject) => {
             fetch(url, {
                 method: 'GET',
