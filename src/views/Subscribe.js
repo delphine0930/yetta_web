@@ -1,11 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
+import script from 'scriptjs';
 
 class Subscribe extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.appRef = createRef();
+    }
+
+    componentDidAmount() {
+        console.log(this.appRef.current);
+        script("https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form.js", () =>{
+            console.log("hi");
+        })
+    }
 
     render() {    
+        console.log(this.appRef);
         return(
             <div id="stb_subscribe">
-                <form action="<https://stibee.com/api/v1.0/lists/o8vhloNlBP1IbgTczAyxbuLclCKi/public/subscribers>" method="POST" target="_blank" acceptCharset="utf-8" className="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" noValidate="">
+                <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
+                <form action="<https://stibee.com/api/v1.0/lists/79993/public/subscribers>" method="POST" target="_blank" acceptCharset="utf-8" className="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" noValidate="">
                     <h1 className="stb_form_title">예따 뉴스레터 구독하기</h1>
                     <fieldset className="stb_form_set">
                         <label htmlFor="stb_email" className="stb_form_set_label">이메일 주소</label>

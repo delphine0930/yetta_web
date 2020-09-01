@@ -117,8 +117,12 @@ class Main extends Component {
 
         return(
         <LoadingOverlay active={this.state.loading}>
+            {this.state.showModal ?
+            <div>
+                <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
+            </div> : null }
             {/* 모바일 서브도메인으로 들어오면 모바일 css 적용 */}
-            {window.location.host.split(".")[0] !== "m" ? 
+            { window.location.host.split(".")[0] !== "m" ? 
             <div>
                 <link rel="stylesheet" type="text/css" href={"../assets/web/css/main.css"} />
                 <link rel="stylesheet" type="text/css" href={"../assets/web/css/layout.css"} /> 
@@ -127,6 +131,7 @@ class Main extends Component {
                 <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/main.css"} />
                 <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/layout.css"} /> 
             </div> }
+            
             <div>
                 <div id="header">
                     <div className="inner">
@@ -144,13 +149,13 @@ class Main extends Component {
                     </div>
                 </div>
                 <div id="container">
-                    <Modal 
+                    {/* <Modal 
                         isOpen = {this.state.showModal}
                         onRequestClose={() => this.setState({ showModal:false })}
                         style={{ content: { backgroundColor: "transparent", border: "0px", padding: "0px",
-                                    left: "10%", right: '10%', top: '10%', height: '53%' } }}>
+                                    left: "10%", right: '10%', top: '10%', height: '420px', borderRadius: '0px' } }}>
                         <Subscribe/>
-                    </Modal>
+                    </Modal> */}
                     <div className="main_top">
                         <div className="inner">
                             <div className="txt_box">
@@ -158,7 +163,7 @@ class Main extends Component {
                                 <p>국내 주식 투자 블로그를 평가하여<br/>상위 20개 블로그의 새 글을<br/>매일 아침 이메일로 보내 드립니다.</p>
                             </div>
                             {/* <button type="button" onClick={() => this.props.history.push('/subscribe')}>구독하기</button> */}
-                            <button type="button" onClick={() => this.setState({showModal: true})}>구독하기</button>
+                            <button type="button" onClick={() => this.props.history.push('/subscribe')}>구독하기</button>
                         </div>
                     </div>
                     <div className="inner">
@@ -187,6 +192,12 @@ class Main extends Component {
                         </table>
                     </div>
                 </div>
+                <div id="footer">
+                        <div className="inner">
+                            <strong>서비스문의 <span>manager@yetta.kr</span></strong>
+                            <p className="copy">© Copyright 2020 -2021 예따</p>
+                        </div>
+                    </div>
             </div>
         </LoadingOverlay >
         );
