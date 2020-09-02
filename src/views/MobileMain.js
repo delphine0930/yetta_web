@@ -154,7 +154,7 @@ class MobileMain extends Component {
                     <div className="inner">
                         <table className="table">
                             <colgroup>
-                                <col style={{width: "50px"}} />
+                                <col style={{width: "50px"}} span="1" />
                                 <col style={{width: "170px"}} />
                                 <col style={{width: "80px"}} />
                                 <col style={{width: "80px"}} />
