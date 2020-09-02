@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "http-proxy-middleware": "^1.0.5",
+    "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-device-detect": "^1.13.1",
@@ -15,11 +16,10 @@
     "react-modal": "^3.11.2",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.3.0",
+    "react-scripts": "^3.4.0",
     "react-tooltip": "^4.2.9",
     "redux": "^4.0.5",
-    "redux-promise": "^0.6.0",
-    "scriptjs": "^2.5.9"
+    "redux-promise": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
