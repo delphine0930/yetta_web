@@ -163,12 +163,12 @@ class MobileMain extends Component {
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th>등수</th>
-                                    <th>블로그</th>
-                                    <th>구독자</th>
-                                    <th class="t_left">전체<br/>게시글</th>
-							        <th class="t_left">월 평균<br/>게시글</th>
-                                    <th>태그</th>
+                                    <th style={{width: "50px"}} >등수</th>
+                                    <th style={{width: "170px"}} >블로그</th>
+                                    <th style={{width: "80px"}} >구독자</th>
+                                    <th style={{width: "80px"}} class="t_left">전체<br/>게시글</th>
+							        <th style={{width: "80px"}} class="t_left">월 평균<br/>게시글</th>
+                                    <th style={{width: "120px"}} >태그</th>
                                 </tr>
                             </thead>
                             <tbody>
