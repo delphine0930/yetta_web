@@ -6,7 +6,7 @@ import LoadingOverlay from 'react-loading-overlay';
 
 import Subscribe from './Subscribe.js';
 
-class Main extends Component {
+class MobileMain extends Component {
 
     constructor(props) {
         super(props);
@@ -117,28 +117,12 @@ class Main extends Component {
 
         return(
         <LoadingOverlay active={this.state.loading}>
-            {this.state.showModal ?
-            <div>
-                <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
-            </div> : null }
-            {/* 모바일 서브도메인으로 들어오면 모바일 css 적용 */}
-            { window.location.host.split(".")[0] !== "m" ? 
-            <div>
-                <link rel="stylesheet" type="text/css" href={"../assets/web/css/main.css"} />
-                <link rel="stylesheet" type="text/css" href={"../assets/web/css/layout.css"} /> 
-            </div> :
-            <div>
-                <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/main.css"} />
-                <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/layout.css"} /> 
-            </div> 
-            }
-            
             <div>
                 <div id="header">
                     <div className="inner">
                         <h1 className="logo">
                             <a href="index.html">
-                                <img src={"/assets/web/images/common/logo.png"} alt="예따" />
+                                <img src={"/logo.png"} alt="예따" />
                             </a>
                         </h1>
                         <form className="search_form">
@@ -205,4 +189,4 @@ class Main extends Component {
     }
 }
 
-export default (Main);
+export default (MobileMain);

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Switch } from "react-router-dom";
 
-import mainRoutes from '../routes/index';
+import mainRoutes from '../routes/webIndex';
 
-class MainLayout extends Component {
+import '../assets/web/css/layout.css';
+import '../assets/web/css/main.css';
+
+class WebMainLayout extends Component {
     render() {
         return(
             <div>
@@ -21,4 +24,4 @@ class MainLayout extends Component {
     }
 }
 
-export default (MainLayout);
+export default (WebMainLayout);

@@ -1,11 +1,11 @@
-import Main from '../views/Main.js';
+import WebMain from '../views/WebMain.js';
 import Subscribe from '../views/Subscribe.js';
 
 const mainRoutes = [
     {
-        name: 'Main',
+        name: 'WebMain',
         path: '/',
-        component: Main,
+        component: WebMain,
     },
     {
         name: 'Subscribe',

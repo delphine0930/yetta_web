@@ -4,7 +4,8 @@ import { isMobile } from 'react-device-detect';
 
 import './App.css';
 
-import MainLayout from './layouts/MainLayout.js';
+import WebMainLayout from './layouts/WebMainLayout.js';
+import MobileMainLayout from './layouts/MobileMainLayout.js';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route path="/" component={MainLayout} />
+          <Route exact path="/" component={WebMainLayout} />
+          <Route exact path="/m" component={MobileMainLayout} />
         </Switch>
       </Router>
     </div>
