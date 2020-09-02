@@ -3,14 +3,14 @@ import { Route, Redirect, Switch } from "react-router-dom";
 
 import mainRoutes from '../routes/mobileIndex';
 
-import '../assets/mobile/css/layout.css';
-import '../assets/mobile/css/main.css';
-
-
 class MobileMainLayout extends Component {
     render() {
+        console.log("hi");
+
         return(
             <div>
+                <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/main.css"} />
+                <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/layout.css"} /> 
                 <div id="wrapper">
                     <Switch>        
                         {mainRoutes.map((route, key) => {
