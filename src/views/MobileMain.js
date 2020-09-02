@@ -154,21 +154,21 @@ class MobileMain extends Component {
                     <div className="inner">
                         <table className="table">
                             <colgroup>
-                                <col style={{width: "50px"}} span="1" />
-                                <col style={{width: "170px"}} />
-                                <col style={{width: "80px"}} />
-                                <col style={{width: "80px"}} />
-                                <col style={{width: "80px"}} />
-                                <col style={{width: "120px"}} />
+                                <col style={{width: "7.8125%"}} />
+                                <col style={{width: "26.5625%"}} />
+                                <col style={{width: "12.5%"}} />
+                                <col style={{width: "12.5%"}} />
+                                <col style={{width: "12.5%"}} />
+                                <col style={{width: "18.75%"}} />
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th style={{width: "50px"}} >등수</th>
-                                    <th style={{width: "170px"}} >블로그</th>
-                                    <th style={{width: "80px"}} >구독자</th>
-                                    <th style={{width: "80px"}} class="t_left">전체<br/>게시글</th>
-							        <th style={{width: "80px"}} class="t_left">월 평균<br/>게시글</th>
-                                    <th style={{width: "120px"}} >태그</th>
+                                    <th >등수</th>
+                                    <th >블로그</th>
+                                    <th >구독자</th>
+                                    <th class="t_left">전체<br/>게시글</th>
+							        <th class="t_left">월 평균<br/>게시글</th>
+                                    <th >태그</th>
                                 </tr>
                             </thead>
                             <tbody>
