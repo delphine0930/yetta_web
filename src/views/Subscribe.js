@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import script from 'scriptjs';
 
 class Subscribe extends Component {
-    render() {    
-        
+
+    componentDidMount() {
+        const stibee = window.STBSUBFORM;
+        stibee.init();
+    }
+
+    render() {        
         return(
             <div>
                 <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
@@ -22,7 +26,7 @@ class Subscribe extends Component {
                         </fieldset>
                         <div className="stb_form_policy">
                             <label>
-                                <input type="checkbox" id="stb_policy" value="stb_policy_true"/>
+                                <input type="checkbox" id="stb_policy" value="stb_policy_true" style={{appearance: "checkbox"}}/>
                                 <button id="stb_form_modal_open" type="button">개인정보 수집 및 이용</button>에 동의합니다.
                             </label>
                             <div className="stb_form_msg_error" id="stb_policy_error"></div>
@@ -45,7 +49,7 @@ class Subscribe extends Component {
                         <button type="submit" className="stb_form_submit_button" id="stb_form_submit_button" style={{backgroundColor: "rgb(62, 129, 246)", color: "rgb(255, 255, 255)"}}>구독하기</button>
                     </fieldset>
                 </form>
-                <script type="text/javascript" src="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form.js"></script>
+                
             </div>
         </div>
         );
