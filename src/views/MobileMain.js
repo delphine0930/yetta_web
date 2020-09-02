@@ -117,7 +117,7 @@ class MobileMain extends Component {
 
         return(
         <LoadingOverlay active={this.state.loading}>
-            <div>
+            <div id="wrapper">
                 <div id="header">
                     <div className="inner">
                         <h1 className="logo">

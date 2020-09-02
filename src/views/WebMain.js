@@ -117,19 +117,7 @@ class WebMain extends Component {
 
         return(
         <LoadingOverlay active={this.state.loading}>
-            {/* 모바일 서브도메인으로 들어오면 모바일 css 적용 */}
-            {/* { window.location.host.split(".")[0] !== "m" ? 
-            <div>
-                <link rel="stylesheet" type="text/css" href={"../assets/web/css/main.css"} />
-                <link rel="stylesheet" type="text/css" href={"../assets/web/css/layout.css"} /> 
-            </div> :
-            <div>
-                <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/main.css"} />
-                <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/layout.css"} /> 
-            </div> 
-            } */}
-            
-            <div>
+            <div id="wrapper">
                 <div id="header">
                     <div className="inner">
                         <h1 className="logo">

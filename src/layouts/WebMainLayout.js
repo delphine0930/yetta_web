@@ -9,15 +9,13 @@ class WebMainLayout extends Component {
             <div>
                 <link rel="stylesheet" type="text/css" href={"../assets/web/css/main.css"} />
                 <link rel="stylesheet" type="text/css" href={"../assets/web/css/layout.css"} /> 
-                <div id="wrapper">
-                    <Switch>        
-                        {mainRoutes.map((route, key) => {
-                            return (<Route exact path={route.path} component={route.component} key={key} />)
-                            }
-                        )} 
-                        <Redirect to="/"/>
-                    </Switch>
-                </div> 
+                <Switch>        
+                    {mainRoutes.map((route, key) => {
+                        return (<Route exact path={route.path} component={route.component} key={key} />)
+                        }
+                    )} 
+                    <Redirect to="/"/>
+                </Switch>
             </div>
         );
     }
