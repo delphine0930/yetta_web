@@ -117,6 +117,8 @@ class MobileMain extends Component {
 
         return(
         <LoadingOverlay active={this.state.loading}>
+            <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/main.css"} />
+            <link rel="stylesheet" type="text/css" href={"../assets/mobile/css/layout.css"} />     
             <div id="wrapper">
                 <div id="header">
                     <div className="inner">

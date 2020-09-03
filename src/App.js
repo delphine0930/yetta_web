@@ -18,8 +18,8 @@ function App() {
     <div>
       <Router>
         <Switch>
-          <Route path="/" component={WebMainLayout} />
           <Route path="/m" component={MobileMainLayout} />
+          <Route path="/" component={WebMainLayout} />
         </Switch>
       </Router>
     </div>
