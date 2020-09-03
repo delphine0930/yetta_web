@@ -9,11 +9,22 @@ import MobileMainLayout from './layouts/MobileMainLayout.js';
 
 
 function App() {
-  // mobile 로 들어오면 서브도메인으로 이동
-  if(isMobile && window.location.host.split(".")[0] !== "m") {
-    window.location.host = "m.yetta.kr";
-  }
+  var myHost = window.location.hostname;
 
+  // mobile 로 서브도메인으로 접근 안했을 때에는 서브도메인으로 리다이렉트
+  if(isMobile && myHost.split(".")[0] !== "m") {
+    // 아예 다른 서브도메인을 갖고 온 경우
+    if(myHost.split(".")[0] !== "yetta"){
+      var newHost = myHost.replace(myHost.split(".")[0], ""); // 서브도메인 없애기
+      window.location.hostname = "m" + newHost;
+    }
+    else {
+      // 서브도메인 없이 들어왔으면 그냥 서브도메인을 붙여줌
+      window.location.hostname = "m." + myHost;
+    }
+    
+  }
+  
   return (
     <div>
       <Router>
