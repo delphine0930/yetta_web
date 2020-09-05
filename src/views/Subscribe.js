@@ -1,21 +1,44 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-
+import Swal from 'sweetalert2';
 
 class Subscribe extends Component {
 
+    constructor(props){
+        super(props);
+
+        this.state = {
+            showModal: true
+        }
+    }
     componentDidMount() {
         $.getScript("https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form.js");
         
     }
 
-    setApiKey = (apiKey) => {
-        var myForm = $("#stb_form_result");
-        console.log(myForm[0].className);
+    catchResult = (apiKey) => {
+        setTimeout(() => {
+            var formResult = document.getElementById("stb_form_result").className;
+            if(formResult.includes("success")){
+                Swal.fire({
+                    title: '구독 신청 완료',
+                    text: '구독해 주셔서 감사합니다.',
+                    icon: 'success',
+                    onAfterClose: () => this.props.history.goBack()
+                })
+            }
+
+        }, 500);
     }
 
-
     render() {      
+        const customStyles = {
+            content : {
+                top: '50%', left: '50%', right: 'auto', bottom: 'auto', marginRight: '-50%',
+                transform: 'translate(-50%, -50%)'
+            }
+        };
+
         return(
             <div>
                 <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
@@ -32,10 +55,6 @@ class Subscribe extends Component {
                             <input type="text" className="stb_form_set_input" id="stb_university" name="university"/>
                             <div className="stb_form_msg_error" id="stb_university_error"></div>
                         </fieldset>
-                        {/* <fieldset className="stb_form_set">
-                            <input type="text" className="stb_form_set_input" id="stb_AccessToken" name="AccessToken" style={{display: "none"}} readOnly
-                            value="d65800f4e941e4527bf4c5b1257f11054398c8383fd20c33b44a495343ac522e5e7c7d361de9ebe2aeee3c13728ef47c5668567df5871a4dfa3f61aa685379d4"/>
-                        </fieldset> */}
                         <div className="stb_form_policy">
                             <label>
                                 <input type="checkbox" id="stb_policy" value="stb_policy_true" />
@@ -58,7 +77,7 @@ class Subscribe extends Component {
                     </div>
                     <div className="stb_form_result" id="stb_form_result"></div>
                     <fieldset className="stb_form_set_submit">
-                        <button type="submit" className="stb_form_submit_button" id="stb_form_submit_button" onClick={() => this.setApiKey("hi")}
+                        <button type="submit" className="stb_form_submit_button" id="stb_form_submit_button" onClick={() => this.catchResult()}
                          style={{backgroundColor: "rgb(62, 129, 246)", color: "rgb(255, 255, 255)"}}>구독하기</button>
                     </fieldset>
                 </form>
