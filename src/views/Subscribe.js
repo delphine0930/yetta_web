@@ -6,15 +6,21 @@ class Subscribe extends Component {
 
     componentDidMount() {
         $.getScript("https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form.js");
+        
+    }
+
+    setApiKey = (apiKey) => {
+        var myForm = $("#stb_form_result");
+        console.log(myForm[0].className);
     }
 
 
-    render() {        
+    render() {      
         return(
             <div>
                 <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
                 <div id="stb_subscribe">
-                    <form action="https://stibee.com/api/v1.0/lists/79993/public/subscribers" method="POST" target="_blank" acceptCharset="utf-8" className="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" noValidate="">
+                    <form action="https://stibee.com/api/v1.0/lists/o8vhloNlBP1IbgTczAyxbuLclCKi/public/subscribers" method="POST" target="_blank" acceptCharset="utf-8" className="stb_form" name="stb_subscribe_form" id="stb_subscribe_form" noValidate="">
                         <h1 className="stb_form_title">예따 뉴스레터 구독하기</h1>
                         <fieldset className="stb_form_set">
                             <label htmlFor="stb_email" className="stb_form_set_label">이메일 주소</label>
@@ -26,6 +32,10 @@ class Subscribe extends Component {
                             <input type="text" className="stb_form_set_input" id="stb_university" name="university"/>
                             <div className="stb_form_msg_error" id="stb_university_error"></div>
                         </fieldset>
+                        {/* <fieldset className="stb_form_set">
+                            <input type="text" className="stb_form_set_input" id="stb_AccessToken" name="AccessToken" style={{display: "none"}} readOnly
+                            value="d65800f4e941e4527bf4c5b1257f11054398c8383fd20c33b44a495343ac522e5e7c7d361de9ebe2aeee3c13728ef47c5668567df5871a4dfa3f61aa685379d4"/>
+                        </fieldset> */}
                         <div className="stb_form_policy">
                             <label>
                                 <input type="checkbox" id="stb_policy" value="stb_policy_true" />
@@ -48,7 +58,8 @@ class Subscribe extends Component {
                     </div>
                     <div className="stb_form_result" id="stb_form_result"></div>
                     <fieldset className="stb_form_set_submit">
-                        <button type="submit" className="stb_form_submit_button" id="stb_form_submit_button" style={{backgroundColor: "rgb(62, 129, 246)", color: "rgb(255, 255, 255)"}}>구독하기</button>
+                        <button type="submit" className="stb_form_submit_button" id="stb_form_submit_button" onClick={() => this.setApiKey("hi")}
+                         style={{backgroundColor: "rgb(62, 129, 246)", color: "rgb(255, 255, 255)"}}>구독하기</button>
                     </fieldset>
                 </form>
                 

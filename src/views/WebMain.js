@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 import ReactTooltip from 'react-tooltip';
-import Modal from 'react-modal';
 import LoadingOverlay from 'react-loading-overlay';
-
-import Subscribe from './Subscribe.js';
 
 class WebMain extends Component {
 

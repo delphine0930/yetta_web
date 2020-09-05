@@ -1,19 +1,17 @@
 import MobileMain from '../views/MobileMain.js';
-// import Subscribe from '../views/Subscribe.js';
-
-var contextPath = "/m";
+import Subscribe from '../views/Subscribe.js';
 
 const mainRoutes = [
     {
         name: 'MobileMain',
-        path: contextPath + '/',
+        path: "/" ,
         component: MobileMain,
     },
-    // {
-    //     name: 'Subscribe',
-    //     path: contextPath + '/subscribe',
-    //     component: Subscribe,
-    // },
+    {
+        name: 'Subscribe',
+        path: '/subscribe',
+        component: Subscribe,
+    },
 ]
 
 export default mainRoutes;

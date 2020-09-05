@@ -24,13 +24,13 @@ function App() {
     }
     
   }
-  
+
+  var isMobileSubDomain = window.location.hostname.split(".")[0] === "m";
   return (
     <div>
       <Router>
         <Switch>
-          <Route path="/m" component={MobileMainLayout} />
-          <Route path="/" component={WebMainLayout} />
+          <Route path="/" component={isMobileSubDomain ? MobileMainLayout : WebMainLayout} />
         </Switch>
       </Router>
     </div>

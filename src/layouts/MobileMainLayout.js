@@ -5,7 +5,6 @@ import mainRoutes from '../routes/mobileIndex';
 
 class MobileMainLayout extends Component {
     render() {
-        console.log("mobile layout")
         return(
             <div>
                 <meta name="viewport" content="width=640, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
