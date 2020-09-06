@@ -4,21 +4,16 @@ import Swal from 'sweetalert2';
 
 class Subscribe extends Component {
 
-    constructor(props){
-        super(props);
-
-        this.state = {
-            showModal: true
-        }
-    }
     componentDidMount() {
         $.getScript("https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form.js");
         
     }
 
-    catchResult = (apiKey) => {
+    catchResult = () => {
         setTimeout(() => {
+            // 성공시 세팅되는 success 를 catch 해서 swal 띄워줌
             var formResult = document.getElementById("stb_form_result").className;
+
             if(formResult.includes("success")){
                 Swal.fire({
                     title: '구독 신청 완료',
@@ -27,18 +22,10 @@ class Subscribe extends Component {
                     onAfterClose: () => this.props.history.goBack()
                 })
             }
-
         }, 500);
     }
 
     render() {      
-        const customStyles = {
-            content : {
-                top: '50%', left: '50%', right: 'auto', bottom: 'auto', marginRight: '-50%',
-                transform: 'translate(-50%, -50%)'
-            }
-        };
-
         return(
             <div>
                 <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/resource.stibee.com/subscribe/stb_subscribe_form_style.css" />
