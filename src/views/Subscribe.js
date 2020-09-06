@@ -37,11 +37,11 @@ class Subscribe extends Component {
                             <input type="email" className="stb_form_set_input" id="stb_email" name="email"/>
                             <div className="stb_form_msg_error" id="stb_email_error"></div>
                         </fieldset>
-                        <fieldset className="stb_form_set">
+                        {/* <fieldset className="stb_form_set">
                             <label htmlFor="stb_university" className="stb_form_set_label">출신 대학</label>
                             <input type="text" className="stb_form_set_input" id="stb_university" name="university"/>
                             <div className="stb_form_msg_error" id="stb_university_error"></div>
-                        </fieldset>
+                        </fieldset> */}
                         <div className="stb_form_policy">
                             <label>
                                 <input type="checkbox" id="stb_policy" value="stb_policy_true" />
