@@ -79,15 +79,16 @@ class WebMain extends Component {
     render() {      
         var rows = [];
 
-        this.state.blogs.forEach((blog) => {
+        rows = this.state.blogs.map((blog) => {
             var diffRanking = blog.yesterdayRanking - blog.ranking;
             var tags = [];
             var tagCount = 0;
-            blog.tags.forEach((tag) => {
-                tags.push(<button type="button" key={tagCount++}>#{tag}</button>);
+            tags = blog.tags.map((tag) => {
+                return (<button type="button" key={tagCount++}>#{tag}</button>);
+                
             });
 
-            rows.push(
+            return (
                 <tr key={blog.ranking}>
                     <td className="rank_num">
                         <span className="c_rank">{blog.ranking}</span>
